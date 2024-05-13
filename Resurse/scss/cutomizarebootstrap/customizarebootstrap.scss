@@ -1,0 +1,31 @@
+@use '../../../node_modules/bootstrap/scss/bootstrap.scss' with(
+    $primary: red,
+    $secondary: purple,
+    $body-bg: #f8f9fa, // culoarea de fundal pentru tema 1
+    $body-color: #212529, // culoarea fontului pentru tema 1
+    $font-family-base: "Arial",// familia de font implicită
+    $border-radius: 0.25rem, // raza border-ului
+    $h1-font-size: 2.5rem, // dimensiunea fontului pentru h1
+    $h2-font-size: 2rem, // dimensiunea fontului pentru h2
+    // ... și așa mai departe pentru h3, h4, etc.
+    $grid-breakpoints: (
+        xs: 0,
+        sm: 800px,
+        md: 1200px, // dimensiunea pentru ecrane medii
+        lg: 1201px, // dimensiunea pentru ecrane mari
+        xl: 1200px,
+        xxl: 1400px
+    )
+    
+
+);
+
+*,
+*::before,
+*::after {
+  box-sizing: content-box; // sau orice altă valoare pe care dorești să o folosești
+}
+
+figure {
+   margin:15px;
+  }

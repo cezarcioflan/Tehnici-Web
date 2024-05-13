@@ -18,11 +18,16 @@
                     vTimp=["noapte","noapte","noapte","noapte","noapte","dimineata","dimineata","dimineata","dimineata","dimineata","dimineata","dimineata","dimineata","zi","zi","zi","zi","zi","zi","zi","zi","noapte","noapte","noapte"]
                     var d=new Date();
                     var ora_curenta=vTimp[d.getHours()]
+                    var contor_imagini = 0;
                     
                     
                     
                     for (let imag of locals.imagini) { 
                         if(imag?.timp?.includes(ora_curenta)){
+                        if(contor_imagini >= 6 && contor_imagini % 3 === 0) {
+                            break;
+                        }
+                                contor_imagini++;
                         %>
                     <figure>
                     <picture>

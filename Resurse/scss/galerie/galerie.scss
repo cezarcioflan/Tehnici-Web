@@ -4,18 +4,34 @@ $letters: 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 
     background-color: var(--c1);
     border: 2px solid black;
     border-radius: 12px;
-    height: 1000px;
+    height: 120vh;
+    padding:15px;
+
+    @media (max-width: 1200px) {
+        height: 100%;
+        
+
+
+
+    }
 }
 
 #grid-galerie {
     counter-reset: figcaption-counter;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    text-align: center;
 
     img {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        transition: transform 0.5s, border-radius 0.5s, scale 0.5s;
+        
+        &:hover {
+            transform: rotate(360deg) scale(1.1);
+            border-radius: 15%;
+        }
     }
 
     figcaption {
@@ -24,4 +40,51 @@ $letters: 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 
             content: counter(figcaption-counter, upper-alpha) ": ";
         }
     }
-}
+    @media (max-width: 800px) {
+        
+            display: flex;
+            flex-direction: column;
+    }
+
+
+
+    @media (max-width: 1200px) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: auto;
+        
+        
+        
+
+        >figure:nth-child(2){
+            grid-area: 1/2/1/3;
+          }
+          
+          
+          >figure:nth-child(3){
+            grid-area: 2/1/2/3;
+          }
+          
+          >figure:nth-child(4){
+            grid-area: 3/1/3/2;
+          }
+          >figure:nth-child(5){
+            grid-area: 3/2/3/3;
+          }
+          >figure:nth-child(6){
+            grid-area: 4/1/4/3;
+          }
+          
+    }
+
+
+
+    }
+        
+
+
+
+
+
+
+
+

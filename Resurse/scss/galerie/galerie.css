@@ -2,23 +2,62 @@
   background-color: var(--c1);
   border: 2px solid black;
   border-radius: 12px;
-  height: 1000px;
+  height: 120vh;
+  padding: 15px;
+}
+@media (max-width: 1200px) {
+  .galerie_grid {
+    height: 100%;
+  }
 }
 
 #grid-galerie {
   counter-reset: figcaption-counter;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  text-align: center;
 }
 #grid-galerie img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  transition: transform 0.5s, border-radius 0.5s, scale 0.5s;
+}
+#grid-galerie img:hover {
+  transform: rotate(360deg) scale(1.1);
+  border-radius: 15%;
 }
 #grid-galerie figcaption {
   counter-increment: figcaption-counter;
 }
 #grid-galerie figcaption::before {
   content: counter(figcaption-counter, upper-alpha) ": ";
+}
+@media (max-width: 800px) {
+  #grid-galerie {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media (max-width: 1200px) {
+  #grid-galerie {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: auto;
+  }
+  #grid-galerie > figure:nth-child(2) {
+    grid-area: 1/2/1/3;
+  }
+  #grid-galerie > figure:nth-child(3) {
+    grid-area: 2/1/2/3;
+  }
+  #grid-galerie > figure:nth-child(4) {
+    grid-area: 3/1/3/2;
+  }
+  #grid-galerie > figure:nth-child(5) {
+    grid-area: 3/2/3/3;
+  }
+  #grid-galerie > figure:nth-child(6) {
+    grid-area: 4/1/4/3;
+  }
 }/*# sourceMappingURL=galerie.css.map */

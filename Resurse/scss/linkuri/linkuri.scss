@@ -1,0 +1,32 @@
+a[href^="http"]{
+    
+    background: radial-gradient(circle, blue 0%, blue 40%, transparent 80%,transparent 100%);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 0;
+
+  
+    
+    transition:  0.5s ease;
+    
+    &:before{
+        content:"\2BB3";
+        font-size:3em;
+    }
+    
+    &:hover{
+        background-size: 100%;
+        &:before{
+        color:black;
+        }
+        &:active{
+            border:2px solid black;
+
+        }
+    }
+
+    &:visited{
+        color:var(--c1);
+    }
+}
+

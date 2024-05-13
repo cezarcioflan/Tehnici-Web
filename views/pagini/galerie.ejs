@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <%- include("../fragmente/head.ejs") %>
+        
+        <meta name="keywords" content="Orizont, ORZNT, ahitectura, birou de arhitectura, Orizont, design, construcții">
+        <meta name="description" content="Homepage-ul biroului de arhitectura ORZNT">
+        <link rel="stylesheet" type="text/css" href="/Resurse/scss/galerie/galerie.css">
+        <title>Galerie</title>
+    </head>
+    <body>
+        <%- include("../fragmente/header.ejs") %>
+        <div class="galerie_grid">
+            <section class="galerie_statica">
+                <h2>Galerie</h2>
+                <div id="grid-galerie">
+                    <% 
+                    vTimp=["noapte","noapte","noapte","noapte","noapte","dimineata","dimineata","dimineata","dimineata","dimineata","dimineata","dimineata","dimineata","zi","zi","zi","zi","zi","zi","zi","zi","noapte","noapte","noapte"]
+                    var d=new Date();
+                    var ora_curenta=vTimp[d.getHours()]
+                    
+                    
+                    
+                    for (let imag of locals.imagini) { 
+                        if(imag?.timp?.includes(ora_curenta)){
+                        %>
+                    <figure>
+                    <picture>
+                        <source srcset="<%= imag.fisier_mici %>" media="(max-width:800px)">
+                        <source srcset="<%= imag.fisier_mediu %>" media="(max-width:1200px)">
+                        
+                        <img src="<%= imag.fisier %>" alt="Bucuresti">
+                    </picture>
+                        <figcaption>
+                    <%= imag.descriere %>
+                        </figcaption>
+                    </figure>
+                    <% }} %>
+                </div>
+            </section>
+        </div>
+    </body>
+</html>

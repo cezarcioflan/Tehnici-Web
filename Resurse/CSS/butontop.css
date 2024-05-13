@@ -1,0 +1,42 @@
+#myBtn {
+    display: inline-block;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width:70px;
+    height:70px;
+    background-color:var(--c3);
+    border-radius: 40px 40px 0 0;
+    border:solid black 2px;
+    box-shadow: inset 0px 0px 6px black;
+    opacity: 50%;
+}
+
+#myBtn:hover {
+    background-color: var(--c2);
+    box-shadow: inset 0px 0px 10px black;
+    transition:linear 300ms;
+    opacity: 100%;
+
+}
+
+#butontext {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 50px;
+    color: var(--c5);
+}
+
+#butontext:hover{
+    font-size: 80px;
+    transition: linear 300ms;
+}
+
+@media screen and (max-width:1000px){
+    #myBtn {
+    display: none;
+    }
+}

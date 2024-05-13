@@ -1,0 +1,9 @@
+::cue {
+  background-color: var(--c1);
+  color: var(--c2);
+  text-align: right;
+}
+
+::cue(.highlight) {
+  text-decoration: underline;
+}/*# sourceMappingURL=subtitrari.css.map */

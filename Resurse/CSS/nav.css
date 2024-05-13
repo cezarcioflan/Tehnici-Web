@@ -1,0 +1,147 @@
+nav{
+    --inaltime-meniu:4.5em;
+    --latime-buton:150px;
+    height: var(--inaltime-meniu);
+    
+    
+
+}
+
+@keyframes dropdown{
+
+    100%{
+        /*opacity:1*/
+    transform:scaleY(1);
+
+    }
+    
+}
+
+
+
+
+#hamburger, #ch-menu{
+    display: none;
+}
+
+
+#acasa-mediu{
+    display: none;
+}
+
+.meniu{
+    display: flex;
+    
+
+}
+
+
+
+.meniu, .meniu ul{
+    list-style-type: none;
+    padding:0px;
+    margin:0px;
+    
+    background-color: var(--c2);
+}
+
+.meniu li{
+    border: 1px solid black;
+    width:var(--latime-buton);
+    height: var(--inaltime-meniu);
+    text-align: center;
+
+    box-sizing: border-box;
+}
+
+.meniu li div{
+    
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    line-height: var(--inaltime-meniu);
+    color:var(--culoare-text);
+    text-decoration: none;
+    box-sizing: border-box;
+    transition: all 0.3s linear;
+}
+
+.meniu li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    line-height: var(--inaltime-meniu);
+    color:var(--culoare-text);
+    text-decoration: none;
+    box-sizing: border-box;
+    transition: all 0.3s linear;
+}
+
+.meniu li:hover>div, .meniu li:hover>a {
+
+    box-shadow:inset 0 0 20px white;
+}
+.meniu li:hover>ul{
+    display: block;
+    position: absolute;
+    z-index:100;
+    animation: dropdown 1s forwards 1;
+}
+
+
+/* submeniu */
+.meniu ul{
+    display: none;
+    margin-left:-1px;
+    padding:0;
+    /*opacity: 0;*/
+    transform: scaleY(0);
+    transform-origin: top;
+    
+
+}
+
+
+@media screen and (min-width:1000px) {
+    
+
+.meniu>li ul li a::before{
+    content: " \2192\00A0	";
+    color:white;
+    position:relative;
+    left:-100px;
+    opacity:0;
+
+
+}
+
+.meniu>li ul li a:hover::before{
+
+    opacity:1;
+    left:0px;
+    transition: 0.3s linear;
+    
+} 
+
+
+.acasa {
+    display: flex;
+    align-items: center;
+}
+
+.acasa::after {
+    content: "Acasă";
+    display: inline-block;
+    margin-left: -10px;
+    position:relative;
+    left:-40px;
+    top:2px;
+}
+
+.fa-solid.fa-house{
+    margin-left:-4px;
+    padding-left: -4px;
+}
+
+}

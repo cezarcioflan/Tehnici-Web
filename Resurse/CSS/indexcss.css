@@ -1,0 +1,155 @@
+:root{
+    --c1:#FFECD4;
+    --c2:#D4C4B0;
+    --c3:#FFEFD4;
+    --c4:#B3A594;
+    --c5:#918578;
+    --spacing: 5vw;
+    --grid-gap: 0.5em;
+    --text-padding: 1em;
+    --font-size:20px;
+    --margin:5px;
+    --padding:5px;
+
+}
+@media screen and (max-width: 768px) {
+    :root {
+        --spacing: 3vw;
+        --grid-gap: 0.3em;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    :root {
+        --spacing: 1vw;
+        --grid-gap: 0.1em;
+    }
+}
+
+
+.grid-layout{
+    padding-left: var(--spacing);
+    padding-right: var(--spacing);
+    grid-gap: var(--grid-gap);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+
+    grid-template-areas: 
+    "z1 z1 z1 z1"
+    "z2 z2 z3 z3"
+    "z2 z2 z4 z4"
+    "z5 z6 z6 z7"
+    "z8 z8 z8 z8";
+}
+
+@media screen and (max-width: 768px) {
+    .grid-layout {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+
+
+        grid-template-areas: 
+        "z1 z1 z1 z1"
+        "z2 z2 z3 z3"
+        "z4 z4 z4 z4"
+        "z5 z5 z6 z6"
+        "z7 z7 z7 z7"
+        "z8 z8 z8 z8";
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+    .grid-layout {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+
+        grid-template-areas: 
+        "z1 z1 z1 z1"
+        "z2 z2 z2 z2"
+        "z3 z3 z3 z3"
+        "z4 z4 z4 z4"
+        "z5 z5 z5 z5"
+        "z6 z6 z6 z6"
+        "z7 z7 z7 z7"
+        "z8 z8 z8 z8";
+    }
+}
+
+
+.grid-layout>div{
+    border:2px solid black;
+    font-size:25px;
+}
+
+.z1{
+    grid-area:z1;
+    height:700px;
+ 
+    position: relative;
+    background-color: var(--c1);
+    border: 2px solid var(--c2);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.z1, .z2, .z3, .z4, .z5, .z6, .z7, .z8 {
+    padding: var(--text-padding);
+}
+
+.z2, .z3, .z4, .z5, .z6, .z7 ,.z8 {
+    background-color: var(--c3);
+    border: 2px solid var(--c4);
+    border-radius: 5px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+
+.z2{
+    grid-area:z2;
+    background-color: var(--c1);
+}
+
+
+.z3{
+    grid-area:z3;
+    background-color: var(--c1);
+}
+
+
+.z4{
+    grid-area:z4;
+    background-color: var(--c1);
+}
+
+.z5{
+    grid-area:z5;
+    background-color: var(--c1);
+}
+
+.z6{
+    grid-area:z6;
+    background-color: var(--c1);
+}
+
+.z7{
+    grid-area:z7;
+    background-color: var(--c1);
+}
+
+.z8{
+    grid-area:z8;
+    background-color: var(--c1);
+}
+
+
+.saira-stencil one-regular {
+    font-family: "Saira Stencil One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+

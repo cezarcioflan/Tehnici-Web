@@ -1,0 +1,24 @@
+.galerie_grid {
+  background-color: var(--c1);
+  border: 2px solid black;
+  border-radius: 12px;
+  height: 1000px;
+}
+
+#grid-galerie {
+  counter-reset: figcaption-counter;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+#grid-galerie img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#grid-galerie figcaption {
+  counter-increment: figcaption-counter;
+}
+#grid-galerie figcaption::before {
+  content: counter(figcaption-counter, upper-alpha) ": ";
+}/*# sourceMappingURL=galerie.css.map */

@@ -1,0 +1,103 @@
+{
+    "cale_galerie":"Resurse/Poze/galerie/",
+    
+    "imagini": [
+		{
+			"fisier":"bucuresti1.jpg",
+			"descriere":"bucuresti ziua",
+			"timp":"zi"
+		},
+		{
+			"fisier":"bucuresti2.jpg",
+			"descriere":"arcul de triumf noaptea",
+			"timp":"noapte"
+			
+		},
+        {
+            "fisier":"bucuresti3.jpg",
+			"descriere":"casa poporului dimineata",
+			"timp":"dimineata"
+        },
+        {
+            "fisier":"bucuresti4.jpg",
+			"descriere":"dambovita",
+			"timp":"dimineata"
+        },
+        {
+            "fisier":"bucuresti5.jpg",
+			"descriere":"fânânile",
+			"timp":"dimineata"
+        },
+        {
+            "fisier":"bucuresti6.jpg",
+			"descriere":"ceva pe la universitate-victoriei",
+			"timp":"dimineata"
+        },
+        {
+            "fisier":"bucuresti7.jpg",
+			"descriere":"ateneu?",
+			"timp":"zi"
+        },
+        {
+            "fisier":"bucuresti8.jpg",
+			"descriere":"universitatea dimineata",
+			"timp":"dimineata"
+        },
+        {
+            "fisier":"bucuresti9.jpg",
+			"descriere":"intercontinental aproximativ ora 5",
+			"timp":"dimineata"
+        },
+        {
+            "fisier":"bucuresti10.jpg",
+			"descriere":"therme",
+			"timp":"noapte"
+        },
+        {
+            "fisier":"bucuresti11.jpg",
+			"descriere":"arcul de triumf",
+			"timp":"zi"
+        },
+        {
+            "fisier":"bucuresti12.jpg",
+			"descriere":"casa poporului noaptea",
+			"timp":"noapte"
+        },
+        {
+            "fisier":"bucuresti13.jpg",
+			"descriere":"luminite de craciun",
+			"timp":"noapte"
+        },
+        {
+            "fisier":"bucuresti14.jpg",
+			"descriere":"interccontinental si biserica",
+			"timp":"zi"
+        },
+        {
+            "fisier":"bucuresti15.jpg",
+			"descriere":"pe maul dambovitei",
+			"timp":"noaptea"
+        },
+        {
+            "fisier":"bucuresti16.jpg",
+			"descriere":"poza random",
+			"timp":"zi"
+        },
+        {
+            "fisier":"bucuresti17.jpg",
+			"descriere":"therme noaptea din nou",
+			"timp":"noapte"
+        },
+        {
+            "fisier":"bucuresti18.jpg",
+			"descriere":"casa poporului suprasaturata",
+			"timp":"zi"
+        }
+		
+	]
+
+
+
+
+
+}

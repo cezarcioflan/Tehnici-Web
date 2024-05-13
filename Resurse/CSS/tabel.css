@@ -1,0 +1,49 @@
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 2px;
+    width: 100%;
+}
+
+table caption {
+    caption-side: bottom;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+thead {
+    background-color: var(--c3);
+}
+
+tbody tr:nth-child(even) {
+    background-color:var(--c2);
+}
+
+tbody tr:nth-child(odd) {
+    background-color:var(--c4);
+}
+
+tbody tr:hover {
+    background-color:var(--c5);
+    transition: background-color 0.3s ease;
+}
+
+
+
+
+.double:hover {
+
+
+    background-color:var(--c5);
+    transition: background-color 0.3s ease;
+
+}
+
+@media (max-width: 600px) {
+    table {
+        border-spacing: 0;
+    }
+}

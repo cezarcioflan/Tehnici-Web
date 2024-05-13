@@ -1,0 +1,295 @@
+@mixin link-style($line-height, $color) {
+    
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    line-height: $line-height;
+    color: $color;
+    text-decoration: none;
+    box-sizing: border-box;
+    transition: all 0.3s linear;
+}
+
+@mixin animation-keyframes($name, $from, $to) {
+    @keyframes #{$name} {
+        0% { transform: scale($from); }
+        100% { transform: scale($to); }
+    }
+}
+
+
+
+
+
+
+nav{
+    --inaltime-meniu:4.5em;
+    --latime-buton:150px;
+    height: var(--inaltime-meniu);
+    
+    
+
+}
+
+@keyframes dropdown{
+
+    100%{
+        /*opacity:1*/
+    transform:scaleY(1);
+
+    }
+    
+}
+
+
+#hamburger, #ch-menu{
+    display: none;
+}
+
+
+#acasa-mediu{
+    display: none;
+}
+
+.meniu{
+    display: flex;
+    list-style-type: none;
+    padding:0px;
+    margin:0px;
+    
+    background-color: var(--c2);
+    ul{
+        list-style-type: none;
+    padding:0px;
+    margin:0px;
+    display: none;
+    margin-left:-1px;
+    padding:0;
+    /*opacity: 0;*/
+    transform: scaleY(0);
+    transform-origin: top;
+    background-color: var(--c2);
+
+    }
+    li{
+        border: 1px solid black;
+        width:var(--latime-buton);
+        height: var(--inaltime-meniu);
+        text-align: center;
+        box-sizing: border-box;
+
+        div{
+    
+            @include link-style(var(--inaltime-meniu), var(--culoare-text));
+        }
+        a {
+            display: block;
+            @include link-style(var(--inaltime-meniu), var(--culoare-text));
+        }
+        &:hover>div, &:hover>a {
+
+            box-shadow:inset 0 0 20px white;
+        }
+        &:hover>ul{
+            display: block;
+            position: absolute;
+            z-index:100;
+            animation: dropdown 1s forwards 1;
+        }
+
+    }
+    
+
+}
+
+@media screen and (min-width:1000px) {
+    
+
+    .meniu>li{
+        ul{
+            li{
+                a{
+                    &::before{
+                        content: " \2192\00A0	";
+                        color:white;
+                        position:relative;
+                        left:-100px;
+                        opacity:0;
+
+
+                    }
+                    &:hover::before{
+
+                        opacity:1;
+                        left:0px;
+                        transition: 0.3s linear;
+
+                    }
+                }
+            }
+        }
+    }
+
+
+// .acasa {
+//     display: flex;
+//     align-items: center;
+//     &::after{
+//         content: "Acasă";
+//         display: inline-block;
+//         margin-left: -10px;
+//         position:relative;
+//         left:-40px;
+//         top:2px;}
+// }
+
+.fa-solid.fa-house{
+
+    margin-left:-4px;
+    padding-left: -4px;
+}
+
+
+}
+
+//                                                                             _________
+//     |\      |       /\   \            /          |\            /|    |     /
+//     | \     |      /  \   \          /           | \          / |    |    /
+//     |  \    |     /    \   \        /            |  \        /  |    |   /
+//     |   \   |    /------\   \      /             |   \      /   |    |  <
+//     |    \  |   /        \   \    /              |    \    /    |    |   \
+//     |     \ |  /          \   \  /               |     \  /     |    |    \
+//     |      \| /            \   \/                |      \/      |    |     \_________
+
+
+
+@media screen and (max-width:700px){
+
+    #hamburger{
+    display:block;
+    background-color: var(--c1);
+    /* border: 2px solid black; */
+    height:100%;
+    display:flex;
+    justify-content: left;
+    align-items: center;
+    box-sizing: border-box;
+    border: 2px solid black;
+
+}
+/* implicit meniul e ascuns*/
+
+
+/*aici facem vizibil meniul cand faem click pe hamburger meniu*/
+#ch-menu:checked+ul.meniu{
+    display: block;
+    z-index: 2;
+    position: relative;
+    transform-origin: 0 0;
+    animation-name: aparitie_meniu_p;
+    animation-iteration-count:1;
+    animation-duration:0.7s;
+    animation-fill-mode:forwards;
+    animation-timing-function:linear;
+
+    >li{
+        >div,>a{
+    
+            z-index: 2;
+            position: relative;
+            transform-origin: top ;
+            animation-name: aparitie_meniu_p_btn;
+            animation-iteration-count:1;
+            animation-duration:0.7s;
+            animation-fill-mode:forwards;
+            animation-timing-function:linear;
+        }
+
+    }
+}
+
+/*meniul sa vina deasupra continutul de mai jos, fara sa impinga continutul*/
+nav{
+ul.meniu{
+    display:none;
+    position:absolute;
+    width:100%;
+    font-size: 12px;
+    li{
+        width:100%;
+    }
+    >li 
+    {
+    ul{
+    position:absolute;
+    width:100%;
+    z-index:200;
+    transform:scale(1,1);
+      }
+    }
+    >li:hover{
+        >ul{
+    
+        z-index:200;
+        transform-origin: top left;
+        animation: anim 1s forwards;
+        transform-origin:top;
+    
+            }
+    }
+}
+}
+
+
+#ch-menu:checked+ul.meniu>li ul>*{
+    position:relative;
+    z-index:200;
+}
+nav ul.meniu>li:hover>ul{
+    
+    z-index:200;
+    transform-origin: top left;
+    animation: anim 1s forwards;
+    transform-origin:top;
+
+}
+
+@keyframes anim {
+    0%{transform:scale(1,0);}
+    100%{transform: scale(1,1);}
+    
+}
+
+// @keyframes aparitie_meniu_p{
+//     0%{
+//         transform:scale(0,0);
+//     } 
+//     50%{
+//         transform:scale(0.5,0.5);
+//     }
+//     100%{
+//         transform:scale(1,1);
+//     }
+// }
+
+@include animation-keyframes('aparitie_meniu_p', 0, 1);
+@include animation-keyframes('aparitie_meniu_p_btn', 0, 1);
+
+// @keyframes aparitie_meniu_p_btn{
+//     0%{
+//         transform:scale(0,0);
+//     } 
+
+//     100%{
+//         transform:scale(1,1);
+//     }
+// }
+
+#hamburger img{
+    width:50px;
+    height:50px;
+
+
+}
+}
+

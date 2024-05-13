@@ -1,0 +1,57 @@
+
+.container-iframe {
+    display: flex;
+    flex-direction: row;
+   
+    align-items: start;
+    height: 100%;
+}
+
+.taburi-iframe {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    padding-bottom:10px;
+  
+}
+
+.taburi-iframe a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 80px;
+    background-color: var(--c1);
+    font-size: var(--font-size);
+    border-top-right-radius: 95px;
+    padding: 10px;
+    text-decoration: none;
+    box-shadow: inset 0px 0px 10px black;
+    margin-bottom:-8px;
+    border-bottom:3px solid black;
+    border-left:3px solid black;
+    font-weight: bold;
+}
+
+.iframe{
+    border: 3px solid black;
+}
+
+.taburi-iframe a:hover{
+    
+    border-left: 3px solid white;
+    text-shadow: 0px 0px 4px black;
+    color:white;
+    transition: linear 0.5s;
+}
+
+@media screen and (max-width: 1000px)
+{
+    .taburi-iframe a{
+        font-size:12px;
+        width:90px;
+        height:50px;
+    }
+
+
+}
